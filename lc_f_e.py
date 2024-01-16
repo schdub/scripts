@@ -8,7 +8,10 @@ arrf = json.loads(fun)
 arra = json.loads(arg)
 arre = json.loads(exp)
 
-for i in range(len(fun)-1):
+assert len(arrf) == len(arra)
+assert len(arrf) == len(arre)
+
+for i in range(len(arrf)):
 	t = arrf[i] + '(' + ','.join([str(i) for i in arra[i]]) + ');'
 	if arre[i] is not None:
 		t = 'ret = ' + t + '\nassert(ret==' + str(arre[i]) + ');'
